@@ -5,7 +5,7 @@ import Block from "./components/Block";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <ThemeProvider theme="light">
         <Block />
       </ThemeProvider>

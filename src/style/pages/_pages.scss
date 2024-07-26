@@ -1,6 +1,12 @@
 @use '../base/variables';
 @use '../base/mixines';
 
+.app {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+}
+
 .block {
     &__container {
         margin: 0 auto;
@@ -9,23 +15,21 @@
 
     &__wrapper {
         margin: 36px 40px;
-        height: 455px;
         background-color: variables.$light-blue;
     }
 
     &__content {
         display: grid;
-        grid-template-columns: 930px 910px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 455px;
         @include mixines.manropeFont();
+    }
 
-        &__image {
-            grid-row: 1/4;
-
-            img {
-                max-height: 100%;
-                width: 100%;
-                object-fit: cover;
-            }
+    &__image {
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
         }
     }
 
