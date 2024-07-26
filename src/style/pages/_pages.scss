@@ -1,0 +1,105 @@
+@use '../base/variables';
+@use '../base/mixines';
+
+.block {
+    &__container {
+        margin: 0 auto;
+        width: 1920px;
+    }
+
+    &__wrapper {
+        margin: 36px 40px;
+        height: 455px;
+        background-color: variables.$light-blue;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 930px 910px;
+        @include mixines.manropeFont();
+
+        &__image {
+            grid-row: 1/4;
+
+            img {
+                max-height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__description {
+        align-self: center;
+        margin-left: 72px;
+        width: 538px;
+        height: 251px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__title {
+        color: variables.$dark-blue;
+        font-weight: 400;
+        font-size: 30px;
+    }
+
+    &__text {
+        color: variables.$gray;
+        font-size: 17px;
+    }
+
+    &__button {
+        background-color: variables.$blue;
+        color: white;
+        font-size: 18px;
+        height: 68px;
+        width: 341px;
+        border-radius: 60px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        .circle {
+            width: 44px;
+            height: 44px;
+            background-color: white;
+            border-radius: 50%;
+            margin-left: 48px;
+            position: relative;
+        }
+
+        .arrow-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+        }
+
+        .arrow {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-top: 1px solid variables.$blue;
+            border-right: 1px solid variables.$blue;
+        }
+
+        .diagonal {
+            position: absolute;
+            width: 14px;
+            height: 1px;
+            background-color: variables.$blue;
+            transform: rotate(-45deg);
+            top: 10px;
+            left: 0;
+            transform-origin: 0 0;
+        }
+    }
+}
