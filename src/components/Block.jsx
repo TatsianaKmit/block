@@ -1,6 +1,5 @@
 import React from 'react'
 import { Modal } from '@gravity-ui/uikit';
-import { Xmark } from '@gravity-ui/icons';
 import RegForm from './RegForm';
 import image from '../assets/image 15.png'
 
@@ -15,17 +14,17 @@ export default function Block() {
                         <h1 className='block__title'>Демо-версия</h1>
                         <div className='block__text'>За 18 лет деятельности было реализовано более 500 крупных, а так же, не менее 2500 средних и малых проектов. Используя знания и накопленный опыт мы можем предложить </div>
                         <div className="block__button" onClick={() => setOpen(true)}>
-                            <div className='text'>Попробовать бесплатно</div>
-                            <div className='circle'>
-                                <div className='arrow-wrapper'>
-                                    <div className='arrow'>
+                            <div className='button__text'>Попробовать бесплатно</div>
+                            <div className='button__circle'>
+                                <div className='button__arrow'>
+                                    <div className='arrow__edge'>
                                     </div>
-                                    <div className="diagonal"></div>
+                                    <div className="arrow__diagonal"></div>
                                 </div>
                             </div>
                         </div>
                         <Modal open={open} onClose={() => setOpen(false)}>
-                            <RegForm />
+                            <RegForm setOpen={setOpen} />
                         </Modal>
                     </div>
                     <div className='block__image'>

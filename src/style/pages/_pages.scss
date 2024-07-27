@@ -68,42 +68,137 @@
         &:hover {
             cursor: pointer;
         }
+    }
+}
 
-        .circle {
-            width: 44px;
-            height: 44px;
-            background-color: white;
-            border-radius: 50%;
-            margin-left: 48px;
-            position: relative;
-        }
+.button {
+    &__circle {
+        width: 44px;
+        height: 44px;
+        background-color: white;
+        border-radius: 50%;
+        margin-left: 48px;
+        position: relative;
+    }
 
-        .arrow-wrapper {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 10px;
-            height: 10px;
-        }
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+    }
+}
 
-        .arrow {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            border-top: 1px solid variables.$blue;
-            border-right: 1px solid variables.$blue;
-        }
+.arrow {
+    &__edge {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top: 1px solid variables.$blue;
+        border-right: 1px solid variables.$blue;
+    }
 
-        .diagonal {
-            position: absolute;
-            width: 14px;
-            height: 1px;
-            background-color: variables.$blue;
-            transform: rotate(-45deg);
-            top: 10px;
-            left: 0;
-            transform-origin: 0 0;
-        }
+    &__diagonal {
+        position: absolute;
+        width: 14px;
+        height: 1px;
+        background-color: variables.$blue;
+        transform: rotate(-45deg);
+        top: 10px;
+        left: 0;
+        transform-origin: 0 0;
+    }
+}
+
+input {
+    &::placeholder {
+        color: variables.$dark-blue  !important; // <div className="form__email"> and <div className="form__password"> element font-color
+    }
+}
+
+.g-control-label {
+    >span {
+        font-size: 18px; // <div className="form__remember"> element font-size
+    }
+}
+
+.form {
+    @include mixines.manropeFont();
+
+    &__container {
+        padding: 24px 0;
+        width: 500px;
+        height: 530px;
+        background-color: variables.$form-blue;
+    }
+
+    &__wrapper {
+        margin: 0 auto;
+        display: grid;
+        width: 452px;
+        grid-template-columns: 1fr;
+        background-color: variables.$form-blue;
+    }
+
+    &__close {
+        justify-self: flex-end;
+        height: 52px;
+        width: 52px;
+        border-radius: 10px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 4px;
+        cursor: pointer;
+    }
+
+    &__enter-system {
+        font-size: 24px;
+        line-height: 24px;
+        margin-bottom: 18px;
+    }
+
+    &__email {
+        background-color: variables.$input-blue;
+        color: variables.$dark-blue  !important;
+        height: 73px;
+        width: 428px;
+        font-size: 18px;
+        line-height: 25px;
+        border-radius: 10px;
+        margin-bottom: 4px;
+        padding-left: 24px;
+    }
+
+    &__password {
+        @extend .form__email;
+    }
+
+    &__remember {
+        margin: 24px 0;
+    }
+
+    &__restore {
+        color: variables.$blue;
+        font-size: 20px;
+        line-height: 20px;
+        margin-bottom: 36px;
+        cursor: pointer;
+    }
+
+    &__enter {
+        @include mixines.formButton();
+        background-color: variables.$blue;
+        color: white;
+        margin-bottom: 4px;
+    }
+
+    &__reg {
+        @include mixines.formButton();
+        border: 1px solid variables.$blue;
+        color: variables.$blue;
     }
 }
