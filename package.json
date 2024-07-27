@@ -2,7 +2,7 @@
     "name": "application",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://TatsianaKmit/github.io/block",
+    "homepage": "https://TatsianaKmit.github.io/block",
     "dependencies": {
         "@gravity-ui/icons": "^2.10.0",
         "@gravity-ui/uikit": "^6.21.0",
